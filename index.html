@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>miniFarm 控制面板</title>
+    <style>
+        body { font-family: -apple-system, sans-serif; background: #eceff1; text-align: center; margin: 0; padding: 20px; }
+        .card { background: white; border-radius: 20px; padding: 25px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); max-width: 400px; margin: auto; }
+        .status-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 30px; }
+        .stat { background: #f8f9fa; padding: 15px; border-radius: 15px; }
+        .val { font-size: 1.2em; font-weight: bold; margin-top: 5px; color: #2e7d32; }
+        .btn-group { margin-bottom: 25px; padding: 10px; border-top: 1px solid #eee; }
+        .btn { border: none; padding: 15px 30px; border-radius: 12px; font-size: 16px; font-weight: bold; cursor: pointer; transition: 0.2s; width: 45%; }
+        .on { background: #4caf50; color: white; margin-right: 5px; }
+        .off { background: #ef5350; color: white; }
+        .btn:active { transform: scale(0.95); opacity: 0.8; }
+        h2 { color: #37474f; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>miniFarm 智慧溫室</h2>
+        <div class="status-grid">
+            <div class="stat">土壤狀態<div class="val">{{ data.soil_status }}</div></div>
+            <div class="stat">水箱水位<div class="val">{{ data.water_level }}</div></div>
+        </div>
+
+        <div class="btn-group">
+            <p>澆水馬達：<strong>{{ status.pump }}</strong></p>
+            <button class="btn on" onclick="ctrl('pump', 'ON')">開啟</button>
+            <button class="btn off" onclick="ctrl('pump', 'OFF')">關閉</button>
+        </div>
+
+        <div class="btn-group">
+            <p>通風風扇：<strong>{{ status.fan }}</strong></p>
+            <button class="btn on" onclick="ctrl('fan', 'ON')">開啟</button>
+            <button class="btn off" onclick="ctrl('fan', 'OFF')">關閉</button>
+        </div>
+        <p style="font-size: 0.8em; color: #999;">系統每 5 秒自動同步一次</p>
+    </div>
+
+    <script>
+        function ctrl(dev, act) {
+            fetch(`/control/${dev}/${act}`, { method: 'POST' })
+                .then(() => location.reload());
+        }
+        setInterval(() => location.reload(), 5000);
+    </script>
+</body>
+</html>
