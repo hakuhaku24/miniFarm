@@ -147,3 +147,7 @@ USER_ID = '自己的USERID'
 <img width="464" height="582" alt="螢幕擷取畫面 2025-12-19 071618" src="https://github.com/user-attachments/assets/b83a12dd-4feb-47fc-b0df-dc5a430e6ac0" />
 
 ![下載 (1)](https://github.com/user-attachments/assets/cc3a8af3-c0df-4c40-8dcf-13b0a3c334fb)
+
+DEMO影片
+
+[![miniFarm 運作影片](https://img.youtube.com/vi/MSaOw2YMkFo/0.jpg)](https://www.youtube.com/watch?v=MSaOw2YMkFo)
