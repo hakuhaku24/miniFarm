@@ -145,4 +145,5 @@ USER_ID = '自己的USERID'
 聲控系統沒有做，前端做得很醜，植物還沒長出來應該直接去買一株成熟有綠葉的植物，可以做更多色彩分析判斷植物的健康度，也可以用紅外線感溫看植物溫度，想到很多但是都沒有做出來。
 
 <img width="464" height="582" alt="螢幕擷取畫面 2025-12-19 071618" src="https://github.com/user-attachments/assets/b83a12dd-4feb-47fc-b0df-dc5a430e6ac0" />
+
 ![下載 (1)](https://github.com/user-attachments/assets/cc3a8af3-c0df-4c40-8dcf-13b0a3c334fb)
