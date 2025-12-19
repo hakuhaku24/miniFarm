@@ -98,7 +98,7 @@ if __name__ == "__main__":
     finally:
         GPIO.cleanup()
 ```
-## messenging api設定
+## messaging api設定
 ```
 CHANNEL_ACCESS_TOKEN = "寫自己的Token"
 USER_ID = "User ID"
